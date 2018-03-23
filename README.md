@@ -5,7 +5,9 @@ Find Like Minded people through matching facebook likes
 This program consists of 3 python files. They are:
 
 1 - get my likes from facebook.py
+
 2 - scrape people who like the same things from facebook.py
+
 3 - find my matches and sort greatest to least.py
 
 The people_extractor.py file is not currently being used. 
