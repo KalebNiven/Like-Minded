@@ -2,6 +2,9 @@ import os
 from bs4 import BeautifulSoup
 from collections import Counter
 
+'''Attention: Running this file takes some time. It is searching through thousands of people spread thourgh multiple html files. The output will be a sorted tuple list containing how many likes I have in common with everyone'''
+
+
 categories = ["likes_section_movies", "likes_section_tv_shows", "likes_section_music", "likes_section_books", "likes_people"]
 
 
@@ -13,12 +16,8 @@ for index, y in enumerate(categories):
     file_dir = "C:\\Users\\cjwar\\Documents\\Esven Enterprises\\Like Minded bot\\Searches\\"+y+"\\"
     for x in os.listdir(file_dir):
         files.append(x)
-
-
-
     # links_list = []
     # name_list = []
-
     table = {}
     for r in range(len(files)):
         file_input = file_dir+files[r]

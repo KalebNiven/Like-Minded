@@ -21,12 +21,13 @@ likes_sections = ["likes_section_music", "likes_section_books", "likes_people"]
 page_link_list = [[]]
 name_list = [[]]
 # for x in range(158)
+
+'''this function scrapes facebook for all likes in the like section array'''
 def facebook_search_bot():
 
     ffprofile = "C:/Users/cjwar/AppData/Roaming/Mozilla/Firefox/Profiles/b4r73h83.Like minded bot"
     driver = webdriver.Firefox(firefox_profile=ffprofile)
     for i, page_link in enumerate(page_link_list[index]):
-
         try:
             element = WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.ID, 'nav-bar')))
         except TimeoutException:
@@ -59,6 +60,8 @@ def facebook_search_bot():
         print(str(name_list[index][i]) + " completed")
     driver.quit()
 
+
+'''this extracts all the names of people who have a matching like, and gets their facebook url and appends it to either name_list or page_link_list'''
 for i,x in enumerate(likes_sections):
     page_category = x
     file_input = "C:\\Users\\cjwar\\Documents\\Esven Enterprises\\Like Minded bot\\Pages\\"+page_category+".html"
@@ -80,6 +83,7 @@ for i,x in enumerate(likes_sections):
                     # print(name)
 del name_list[-1]
 del page_link_list[-1]
+'''this only has to be run once to get the html data'''
 for index, x in enumerate(likes_sections):
     page_category = x
     facebook_search_bot()
